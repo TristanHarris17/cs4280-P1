@@ -1,0 +1,6 @@
+program x1 set x1 1234
+output x1
+@ this is a comment @
+?le x1 5
+xhello
+xHELLO
