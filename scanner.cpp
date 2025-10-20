@@ -188,9 +188,11 @@ void testScanner(const std::string &filename) {
     }
 }
 
+/*
 int main(int argc, char **argv) {
     std::string filename = "sample.txt";
     if (argc > 1) filename = argv[1];
     testScanner(filename);
     return 0;
 }
+*/
