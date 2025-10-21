@@ -2,14 +2,6 @@
 
 #include <fstream>
 #include <iostream>
-#include "scanner.h"
-
-#include <fstream>
-#include <iostream>
-#include "scanner.h"
-
-#include <fstream>
-#include <iostream>
 #include <cctype>
 #include <unordered_set>
 #include <vector>
@@ -187,12 +179,3 @@ void testScanner(const std::string &filename) {
         std::cout << tokenGroupName(t.group) << " " << t.instance << " " << t.line << std::endl;
     }
 }
-
-/*
-int main(int argc, char **argv) {
-    std::string filename = "sample.txt";
-    if (argc > 1) filename = argv[1];
-    testScanner(filename);
-    return 0;
-}
-*/

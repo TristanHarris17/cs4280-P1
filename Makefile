@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -Iinclude -Wall -Wextra -std=c++11
 SRC = main.cpp scanner.cpp
 OBJ = $(SRC:.cpp=.o)
-TARGET = scanner
+TARGET = P1
 
 all: $(TARGET)
 
