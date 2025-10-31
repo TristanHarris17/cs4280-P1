@@ -167,9 +167,9 @@ void testScanner(std::istream &in) {
     while (true) {
         Token t = scanner();
         if (t.group == TokenGroup::END_OF_FILE) {
-            std::cout << tokenGroupName(t.group) << " " << t.instance << " " << t.line << std::endl;
+            std::cout << "Token: " << tokenGroupName(t.group) << " Line: " << t.line << std::endl;
             break;
         }
-        std::cout << tokenGroupName(t.group) << " " << t.instance << " " << t.line << std::endl;
+        std::cout << "Token: " << tokenGroupName(t.group) << " Instance: " << t.instance << " Line: " << t.line << std::endl;
     }
 }

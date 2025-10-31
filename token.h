@@ -19,10 +19,10 @@ struct Token {
 
 inline const char* tokenGroupName(TokenGroup g) {
     switch (g) {
-        case TokenGroup::KEYWORD: return "Keywords";
-        case TokenGroup::NUMBER: return "Numbers";
-        case TokenGroup::OPERATOR: return "Operators";
-        case TokenGroup::IDENTIFIER: return "Identifiers";
+        case TokenGroup::KEYWORD: return "KEYWORD";
+        case TokenGroup::NUMBER: return "NUMBER";
+        case TokenGroup::OPERATOR: return "OPERATOR";
+        case TokenGroup::IDENTIFIER: return "IDENTIFIER";
         case TokenGroup::END_OF_FILE: return "EOF";
     }
     return "Unknown";
