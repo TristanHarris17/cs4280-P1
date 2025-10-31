@@ -26,14 +26,8 @@ static bool isOperatorStart(char c) {
     return ops.find(c) != std::string::npos || c == '?' || c == '*' || c == '/';
 }
 
-void initScanner(const std::string &filename) {
+void initScanner(std::istream &in) {
     tokens.clear();
-
-    std::ifstream in(filename);
-    if (!in) {
-        std::cerr << "Could not open file: " << filename << std::endl;
-        std::exit(1);
-    }
 
     std::string line;
     int lineno = 0;
@@ -168,8 +162,8 @@ Token scanner() {
     return t;
 }
 
-void testScanner(const std::string &filename) {
-    initScanner(filename);
+void testScanner(std::istream &in) {
+    initScanner(in);
     while (true) {
         Token t = scanner();
         if (t.group == TokenGroup::END_OF_FILE) {
