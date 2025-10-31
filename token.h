@@ -28,4 +28,4 @@ inline const char* tokenGroupName(TokenGroup g) {
     return "Unknown";
 }
 
-#endif // TOKEN_H
+#endif

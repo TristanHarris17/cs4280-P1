@@ -40,7 +40,6 @@ void initScanner(std::istream &in) {
             // Skip whitespace
             if (std::isspace((unsigned char)c)) { i++; continue; }
 
-            // Comments between @ and @ possibly spanning multiple tokens but not lines per spec?
             if (c == '@') {
                 // consume until next @ or EOF of file; comments can span lines
                 bool closed = false;
@@ -78,7 +77,7 @@ void initScanner(std::istream &in) {
                     continue;
                 }
 
-                // Identifiers must begin with lowercase 'x' only (not 'X')
+                // Identifiers must begin with lowercase x
                 if (ident.size() > 0 && ident[0] == 'x') {
                     // enforce up to 8 significant characters
                     if (ident.size() > 8) {
@@ -111,7 +110,7 @@ void initScanner(std::istream &in) {
             if (isOperatorStart(c)) {
                 // Check multi-char operators: ?xx, **, //
                 if (c == '?') {
-                    // need two more letters like ?le
+                    // need two more letters
                     if (i + 2 < line.size()) {
                         std::string op = line.substr(i, 3);
                         if (multi_ops.count(op)) {
@@ -144,7 +143,7 @@ void initScanner(std::istream &in) {
                 }
             }
 
-            // If we get here, it's an invalid character
+            // invalid character
             lexicalError(std::string("Invalid character: '") + c + "'", lineno);
         }
     }
