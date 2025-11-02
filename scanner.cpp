@@ -135,9 +135,15 @@ void initScanner(std::istream &in) {
                     }
                 }
 
-                // Single char operators
+                // Single char operators or delimiters
                 std::string s(1, c);
-                if (std::string(":;+-=(){}[]").find(c) != std::string::npos) {
+                const std::string delims = "(){}[]:;";
+                if (delims.find(c) != std::string::npos) {
+                    tokens.push_back({TokenGroup::DELIMITER, s, lineno});
+                    i++; continue;
+                }
+                // single-char operators left
+                if (std::string("+-=").find(c) != std::string::npos) {
                     tokens.push_back({TokenGroup::OPERATOR, s, lineno});
                     i++; continue;
                 }

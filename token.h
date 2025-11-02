@@ -7,6 +7,7 @@ enum class TokenGroup {
     KEYWORD,
     NUMBER,
     OPERATOR,
+    DELIMITER,
     IDENTIFIER,
     END_OF_FILE,
 };
@@ -22,6 +23,7 @@ inline const char* tokenGroupName(TokenGroup g) {
         case TokenGroup::KEYWORD: return "KEYWORD";
         case TokenGroup::NUMBER: return "NUMBER";
         case TokenGroup::OPERATOR: return "OPERATOR";
+        case TokenGroup::DELIMITER: return "DELIMITER";
         case TokenGroup::IDENTIFIER: return "IDENTIFIER";
         case TokenGroup::END_OF_FILE: return "EOF";
     }
